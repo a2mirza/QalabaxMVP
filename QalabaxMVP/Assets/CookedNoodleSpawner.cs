@@ -28,13 +28,25 @@ public class CookedNoodleSpawner : MonoBehaviour
 
             // Check if each prefab is present in the collider
             if (ContainsPrefabWithTag("CheesePile"))
+            {
+                Debug.Log("CheesePile detected.");
                 combination += "CheesePile_";
+            }
             if (ContainsPrefabWithTag("TomatoPile"))
+            {
+                Debug.Log("TomatoPile detected.");
                 combination += "TomatoPile_";
+            }
             if (ContainsPrefabWithTag("MushroomPile"))
+            {
+                Debug.Log("MushroomPile detected.");
                 combination += "MushroomPile_";
+            }
             if (ContainsPrefabWithTag("Noodlebrick"))
+            {
+                Debug.Log("Noodlebrick detected.");
                 combination += "Noodlebrick_";
+            }
 
             // Remove the trailing underscore
             combination = combination.TrimEnd('_');
