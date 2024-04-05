@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1970840865485252136}
   m_Layer: 0
   m_Name: Noodlebrick
-  m_TagString: Untagged
+  m_TagString: Noodlebrick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

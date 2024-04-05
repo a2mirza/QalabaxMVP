@@ -21,15 +21,20 @@ public class CookedNoodleSpawner : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        // Check if the collided object is one of the prefabs
-        if (other.CompareTag("CheesePile") || other.CompareTag("TomatoPile") || other.CompareTag("MushroomPile") || other.CompareTag("Noodlebrick"))
+        // Check if the collided object is tagged as "Cookingspoon"
+        if (other.CompareTag("Cookingspoon"))
         {
-            // Add the collided object's tag to the combination string
             string combination = "";
-            combination += other.CompareTag("CheesePile") ? "CheesePile_" : "";
-            combination += other.CompareTag("TomatoPile") ? "TomatoPile_" : "";
-            combination += other.CompareTag("MushroomPile") ? "MushroomPile_" : "";
-            combination += other.CompareTag("Noodlebrick") ? "Noodlebrick_" : "";
+
+            // Check if each prefab is present in the collider
+            if (ContainsPrefabWithTag("CheesePile"))
+                combination += "CheesePile_";
+            if (ContainsPrefabWithTag("TomatoPile"))
+                combination += "TomatoPile_";
+            if (ContainsPrefabWithTag("MushroomPile"))
+                combination += "MushroomPile_";
+            if (ContainsPrefabWithTag("Noodlebrick"))
+                combination += "Noodlebrick_";
 
             // Remove the trailing underscore
             combination = combination.TrimEnd('_');
@@ -47,5 +52,17 @@ public class CookedNoodleSpawner : MonoBehaviour
                 Instantiate(combinationPrefabMap[combination], transform.position, Quaternion.identity);
             }
         }
+    }
+
+    // Function to check if a prefab with a specific tag is present in the collider
+    bool ContainsPrefabWithTag(string tag)
+    {
+        Collider[] colliders = Physics.OverlapBox(transform.position, transform.localScale / 2);
+        foreach (Collider col in colliders)
+        {
+            if (col.CompareTag(tag))
+                return true;
+        }
+        return false;
     }
 }

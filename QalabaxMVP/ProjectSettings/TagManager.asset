@@ -11,6 +11,11 @@ TagManager:
   - Floor
   - WaterSprinkles
   - Knife
+  - MushroomPile
+  - CheesePile
+  - Noodlebrick
+  - TomatoPile
+  - Cookingspoon
   layers:
   - Default
   - TransparentFX
