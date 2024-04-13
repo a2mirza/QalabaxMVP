@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8001897915964594365}
   - component: {fileID: 7988161908585833660}
   - component: {fileID: 5012027201925903315}
+  - component: {fileID: 8230578026530040229}
   m_Layer: 0
   m_Name: MushroomPile
   m_TagString: MushroomPile
@@ -236,6 +237,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14692456, y: 0.09007871, z: 0.23060516}
   m_Center: {x: 0.0023407042, y: 0.0006687045, z: 0.0076908916}
+--- !u!114 &8230578026530040229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864153199650944307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8379b7b78cc4434683b432fbc8ed6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ing: 2
 --- !u!1001 &8964495396288460333
 PrefabInstance:
   m_ObjectHideFlags: 0

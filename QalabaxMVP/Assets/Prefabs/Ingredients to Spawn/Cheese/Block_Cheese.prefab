@@ -26,17 +26,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 887e759bab8a7b24ea4e60847478a293,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.659
+      value: -1.1311556
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 887e759bab8a7b24ea4e60847478a293,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.117
+      value: 1.0086932
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 887e759bab8a7b24ea4e60847478a293,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.344
+      value: 3.2801461
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 887e759bab8a7b24ea4e60847478a293,
         type: 3}
@@ -103,6 +103,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 6061268377434741962}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 887e759bab8a7b24ea4e60847478a293,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5015188718338070631}
   m_SourcePrefab: {fileID: 100100000, guid: 887e759bab8a7b24ea4e60847478a293, type: 3}
 --- !u!1 &7198654622692951221 stripped
 GameObject:
@@ -324,3 +328,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tomato_sliced_pile: {fileID: 2605111712993211080, guid: 79c0f06924397af4eb5a3f08ee7b6d1f,
     type: 3}
+--- !u!114 &5015188718338070631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7198654622692951221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2756715c94554c645a4bfc69d7c3366e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

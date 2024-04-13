@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1973697544557459427}
   - component: {fileID: 585123422568155191}
   - component: {fileID: 1392564380279429898}
+  - component: {fileID: 8883829823755546819}
   m_Layer: 0
   m_Name: CheesePile
   m_TagString: CheesePile
@@ -244,6 +245,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &8883829823755546819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2605111712993211080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8379b7b78cc4434683b432fbc8ed6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ing: 1
 --- !u!1001 &3832111878828816531
 PrefabInstance:
   m_ObjectHideFlags: 0

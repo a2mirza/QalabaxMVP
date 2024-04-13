@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2526048016924450389}
   - component: {fileID: 7926324264802447071}
   - component: {fileID: 3701516679465591750}
+  - component: {fileID: 2399476484777744702}
   m_Layer: 0
   m_Name: TomatoPile
   m_TagString: TomatoPile
@@ -239,6 +240,19 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &2399476484777744702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3888671663241846523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8379b7b78cc4434683b432fbc8ed6c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ing: 3
 --- !u!1 &8315798816521926579
 GameObject:
   m_ObjectHideFlags: 0
