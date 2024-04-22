@@ -19,7 +19,7 @@ public class BowlColliderHandler : MonoBehaviour
 
             // Alter the dimension of the cloned prefab as needed
             // For example, you can change the scale of the cloned prefab
-            clonedPrefab.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            clonedPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
         }
     }
 }
