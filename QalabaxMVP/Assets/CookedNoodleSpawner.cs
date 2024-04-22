@@ -139,7 +139,7 @@ public class CookedNoodleSpawner : MonoBehaviour
             //    Destroy(i);
             //}
             ingredients = new List<CookedIngredients.ingredientType>();
-            newDish.transform.localScale = new Vector3(0.3f, 0.3f, 0.3f); // Set the scale as needed
+            newDish.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f); // Set the scale as needed
         }
 
     }
