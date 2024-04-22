@@ -16,6 +16,7 @@ TagManager:
   - Noodlebrick
   - TomatoPile
   - Cookingspoon
+  - CookedNoodles
   layers:
   - Default
   - TransparentFX
