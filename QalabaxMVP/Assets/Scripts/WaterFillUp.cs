@@ -41,7 +41,7 @@ public class WaterFillUp : MonoBehaviour
         // Only increase fill value if below max
         if (currentFillValue < maxFillValue)
         {
-            currentFillValue += 0.05f; //
+            currentFillValue += 0.25f; //
         }
     }
 
