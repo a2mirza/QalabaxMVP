@@ -4,12 +4,18 @@ public class BowlColliderHandler : MonoBehaviour
 {
     // Reference to the empty child object of the Bowl prefab
     public Transform emptyChild;
+    private bool isCooked;
+
+    private void Start()
+    {
+        isCooked = false;
+    }
 
     // This method is called whenever a trigger collider enters another trigger collider
     private void OnTriggerEnter(Collider other)
     {
         // Check if the collider that entered is a cooked noodles pot object
-        if (other.CompareTag("CookedNoodles"))
+        if (other.CompareTag("CookedNoodles") && !isCooked)
         {
             // Get the prefab of the pot object
             GameObject potPrefab = other.gameObject;
@@ -20,6 +26,7 @@ public class BowlColliderHandler : MonoBehaviour
             // Alter the dimension of the cloned prefab as needed
             // For example, you can change the scale of the cloned prefab
             clonedPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            isCooked = true;
         }
     }
 }
