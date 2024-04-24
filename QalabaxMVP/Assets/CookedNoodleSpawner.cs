@@ -10,7 +10,21 @@ public class CookedNoodleSpawner : MonoBehaviour
     [System.Serializable]
     public struct Recipe
     {
+        public noodleType noodle;
+        public enum noodleType
+        {
+            Noodles,
+            NoodlesCheese,
+            NoodlesMushroom,
+            NoodlesTomato,
+            NoodlesTomatoMushroom,
+            NoodlesTomatoCheese,
+            NoodlesMushroomCheese,
+            NoodlesAll
+        }
         public List<CookedIngredients.ingredientType> ingredientTypes;
+
+
         public GameObject prefab;
     }
 
@@ -24,16 +38,7 @@ public class CookedNoodleSpawner : MonoBehaviour
 
     void Start()
     {
-        //// Populate the combinationPrefabMap with combinations and corresponding prefabs
-        //combinationPrefabMap.Add("CheesePile_TomatoPile_MushroomPile_Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_All"));
-        //combinationPrefabMap.Add("CheesePile_MushroomPile_Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_Cheese_Mushroom"));
-        //combinationPrefabMap.Add("TomatoPile_MushroomPile_Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_Tomato_Mushroom"));
-        //combinationPrefabMap.Add("TomatoPile_CheesePile_Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_Cheese_Tomato"));
-        //combinationPrefabMap.Add("CheesePile_Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_OnlyCheese"));
-        //combinationPrefabMap.Add("MushroomPile_Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_OnlyMushroom"));
-        //combinationPrefabMap.Add("TomatoPile_Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_OnlyTomato"));
-        //combinationPrefabMap.Add("Noodlebrick", Resources.Load<GameObject>("Cooked_Noodles_OnlyNoodles"));
-        //combination = "";
+        
 
         ingredients = new List<CookedIngredients.ingredientType>();
     }
