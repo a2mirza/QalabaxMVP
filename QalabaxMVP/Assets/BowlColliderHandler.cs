@@ -28,7 +28,7 @@ public class BowlColliderHandler : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Check if the collider that entered is a cooked noodles pot object
-        if (other.CompareTag("CookedNoodles") && !isCooked) //Make New tags for each prefab
+        if (other.CompareTag("Noodles") && !isCooked) //Make New tags for each prefab
         {
             // Get the prefab of the pot object
             GameObject potPrefab = other.gameObject;
@@ -43,6 +43,76 @@ public class BowlColliderHandler : MonoBehaviour
             currentBowl = orderBowl.Noodles; //change this to make this 
         }
         else if (other.CompareTag("NoodlesCheese") && !isCooked) //Make New tags for each prefab
+        {
+            // Get the prefab of the pot object
+            GameObject potPrefab = other.gameObject;
+
+            // Clone the prefab and position it on the empty child object of the Bowl
+            GameObject clonedPrefab = Instantiate(potPrefab, emptyChild.position, emptyChild.rotation, emptyChild);
+
+            // Alter the dimension of the cloned prefab as needed
+            // For example, you can change the scale of the cloned prefab
+            clonedPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            isCooked = true;
+            currentBowl = orderBowl.NoodlesCheese; //change this to make this 
+        }
+        else if (other.CompareTag("NoodlesMushroom") && !isCooked) //Make New tags for each prefab
+        {
+            // Get the prefab of the pot object
+            GameObject potPrefab = other.gameObject;
+
+            // Clone the prefab and position it on the empty child object of the Bowl
+            GameObject clonedPrefab = Instantiate(potPrefab, emptyChild.position, emptyChild.rotation, emptyChild);
+
+            // Alter the dimension of the cloned prefab as needed
+            // For example, you can change the scale of the cloned prefab
+            clonedPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            isCooked = true;
+            currentBowl = orderBowl.NoodlesCheese; //change this to make this 
+        }
+        else if (other.CompareTag("NoodlesTomato") && !isCooked) //Make New tags for each prefab
+        {
+            // Get the prefab of the pot object
+            GameObject potPrefab = other.gameObject;
+
+            // Clone the prefab and position it on the empty child object of the Bowl
+            GameObject clonedPrefab = Instantiate(potPrefab, emptyChild.position, emptyChild.rotation, emptyChild);
+
+            // Alter the dimension of the cloned prefab as needed
+            // For example, you can change the scale of the cloned prefab
+            clonedPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            isCooked = true;
+            currentBowl = orderBowl.NoodlesCheese; //change this to make this 
+        }
+        else if (other.CompareTag("NoodlesTomatoMushroom") && !isCooked) //Make New tags for each prefab
+        {
+            // Get the prefab of the pot object
+            GameObject potPrefab = other.gameObject;
+
+            // Clone the prefab and position it on the empty child object of the Bowl
+            GameObject clonedPrefab = Instantiate(potPrefab, emptyChild.position, emptyChild.rotation, emptyChild);
+
+            // Alter the dimension of the cloned prefab as needed
+            // For example, you can change the scale of the cloned prefab
+            clonedPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            isCooked = true;
+            currentBowl = orderBowl.NoodlesCheese; //change this to make this 
+        }
+        else if (other.CompareTag("NoodlesMushroomCheese") && !isCooked) //Make New tags for each prefab
+        {
+            // Get the prefab of the pot object
+            GameObject potPrefab = other.gameObject;
+
+            // Clone the prefab and position it on the empty child object of the Bowl
+            GameObject clonedPrefab = Instantiate(potPrefab, emptyChild.position, emptyChild.rotation, emptyChild);
+
+            // Alter the dimension of the cloned prefab as needed
+            // For example, you can change the scale of the cloned prefab
+            clonedPrefab.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            isCooked = true;
+            currentBowl = orderBowl.NoodlesCheese; //change this to make this 
+        }
+        else if (other.CompareTag("NoodlesAll") && !isCooked) //Make New tags for each prefab
         {
             // Get the prefab of the pot object
             GameObject potPrefab = other.gameObject;
