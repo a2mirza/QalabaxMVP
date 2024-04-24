@@ -1,16 +1,19 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI; // Add this line for IEnumerator
+using UnityEngine.UI;
 
 public class CapsuleController : MonoBehaviour
 {
-    public Transform[] positions; // Positions to move the capsule to
-    public Image dialogueBoxImage; // UI Image to display the order
-    public Sprite[] orderSprites; // Array of sprites corresponding to different orders
-    public GameObject successPrefab; // Prefab for showing success
-    public GameObject failPrefab; // Prefab for showing failure
+    public Transform[] positions;
+    public Image dialogueBoxImage;
+    public Sprite[] orderSprites;
+    public GameObject successPrefab;
+    public GameObject failPrefab;
+    public float waitTime;
+    public float rotationSpeed = 5f; // Rotation speed for the character
 
     public requiredOrderTag currentOrder;
+
     public enum requiredOrderTag
     {
         Noodles,
@@ -23,12 +26,9 @@ public class CapsuleController : MonoBehaviour
         NoodlesAll
     }
 
-        
-
     private int currentPositionIndex = 0;
     private bool isWaiting = false;
     private bool isMoving = false;
-    public float waitTime;
 
     private void Start()
     {
@@ -38,17 +38,12 @@ public class CapsuleController : MonoBehaviour
 
     IEnumerator MoveSequence()
     {
-        // Move to position 0 initially
         yield return MoveToPosition(0);
 
-        // Wait at position 1 until an order is received or timer expires
         yield return MoveToPosition(1);
         StartCoroutine(StartWaiting());
-        yield return new WaitUntil(() => !isWaiting); // Wait for the specified time at position 1
+        yield return new WaitUntil(() => !isWaiting);
 
-        
-
-        // Then move to position 2
         yield return MoveToPosition(2);
     }
 
@@ -57,30 +52,33 @@ public class CapsuleController : MonoBehaviour
         isMoving = true;
         while (Vector3.Distance(transform.position, positions[positionIndex].position) > 0.01f)
         {
+            // Move towards the target position
             transform.position = Vector3.MoveTowards(transform.position, positions[positionIndex].position, Time.deltaTime * 2f);
-            yield return null; // Wait a frame and then continue
+
+            // Rotate towards the target rotation
+            Quaternion targetRotation = Quaternion.LookRotation(positions[positionIndex].position - transform.position);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+
+            yield return null;
         }
         isMoving = false;
     }
 
     IEnumerator StartWaiting()
     {
-        float timer = 0; // Reset timer
-        isWaiting = true; // Start waiting
+        float timer = 0;
+        isWaiting = true;
         while (isWaiting && timer < waitTime)
         {
-            timer += Time.deltaTime; // Increment the timer by the time of the last frame
-            yield return null; // Wait until the next frame
+            timer += Time.deltaTime;
+            yield return null;
         }
-        isWaiting = false; // Stop waiting if the timer reaches the wait time
-
+        isWaiting = false;
     }
-
-    
 
     private void OnTriggerEnter(Collider other)
     {
-       if (other.gameObject.CompareTag("Bowl"))
+        if (other.gameObject.CompareTag("Bowl"))
         {
             BowlColliderHandler bowl = other.GetComponent<BowlColliderHandler>();
             if (bowl.currentBowl.ToString() == currentOrder.ToString())
@@ -90,7 +88,7 @@ public class CapsuleController : MonoBehaviour
             }
             else
             {
-                failPrefab.SetActive(true); 
+                failPrefab.SetActive(true);
                 isWaiting = false;
             }
         }
@@ -98,7 +96,6 @@ public class CapsuleController : MonoBehaviour
 
     public void UpdateOrderSprite()
     {
-        // Check the current order and update the sprite accordingly
         switch (currentOrder)
         {
             case requiredOrderTag.Noodles:
@@ -131,7 +128,3 @@ public class CapsuleController : MonoBehaviour
         }
     }
 }
-
-
-    
-    
